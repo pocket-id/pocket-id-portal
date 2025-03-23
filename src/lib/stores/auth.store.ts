@@ -71,7 +71,7 @@ function createAuthStore() {
         const domain = window.location.hostname;
 
         // Store userId in a dedicated cookie with domain for server-side access
-        document.cookie = `user_id=${user.sub}; path=/; max-age=${longMaxAge}; domain=${domain}; SameSite=Lax`;
+        document.cookie = `user_id=${user.sub}; path=/; max-age=${longMaxAge}; domain=${domain}; SameSite=Lax; secure`;
         console.log(
           `Set user_id cookie with domain ${domain} and 30-day expiration:`,
           user.sub,
@@ -86,10 +86,10 @@ function createAuthStore() {
         // Also store the user data in auth_user cookie
         document.cookie = `auth_user=${JSON.stringify(
           user,
-        )}; path=/; max-age=${tokenMaxAge}; domain=${domain}; SameSite=Lax`;
+        )}; path=/; max-age=${tokenMaxAge}; domain=${domain}; SameSite=Lax; secure`;
         document.cookie = `auth_token=${JSON.stringify(
           tokens,
-        )}; path=/; max-age=${tokenMaxAge}; domain=${domain}; SameSite=Lax`;
+        )}; path=/; max-age=${tokenMaxAge}; domain=${domain}; SameSite=Lax; secure`;
       }
 
       set({
@@ -103,7 +103,7 @@ function createAuthStore() {
     clearUser: () => {
       // Clear userId cookie
       if (browser) {
-        document.cookie = "user_id=; path=/; max-age=0; SameSite=Strict";
+        document.cookie = "user_id=; path=/; max-age=0; SameSite=Strict; secure";
       }
 
       set({
