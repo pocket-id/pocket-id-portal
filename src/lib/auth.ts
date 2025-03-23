@@ -222,12 +222,12 @@ export function storeAuthState(
     // Store the tokens in a cookie for server-side access
     document.cookie = `auth_token=${JSON.stringify(
       tokens,
-    )}; path=/; max-age=${tokenMaxAge}; SameSite=Lax`;
+    )}; path=/; max-age=${tokenMaxAge}; SameSite=Lax; secure`;
 
     // Store user info in a cookie for server-side access
     document.cookie = `auth_user=${JSON.stringify(
       userInfo,
-    )}; path=/; max-age=${tokenMaxAge}; SameSite=Lax`;
+    )}; path=/; max-age=${tokenMaxAge}; SameSite=Lax; secure`;
 
     // User ID cookie gets a much longer expiration (30 days)
     const longMaxAge = 30 * 24 * 60 * 60; // 30 days in seconds
@@ -236,7 +236,7 @@ export function storeAuthState(
     // Use domain parameter to ensure the cookie works across all pages
     if (userInfo.sub) {
       const domain = window.location.hostname;
-      document.cookie = `user_id=${userInfo.sub}; path=/; max-age=${longMaxAge}; domain=${domain}; SameSite=Lax`;
+      document.cookie = `user_id=${userInfo.sub}; path=/; max-age=${longMaxAge}; domain=${domain}; SameSite=Lax; secure`;
       console.log(
         `Set user_id cookie with domain ${domain} and 30-day expiration:`,
         userInfo.sub,
@@ -258,12 +258,12 @@ export function clearAuthState(preserveUserId: boolean = false): void {
     const domain = window.location.hostname;
 
     // Clear cookies but optionally preserve user_id
-    document.cookie = `auth_token=; path=/; max-age=0; domain=${domain}; SameSite=Lax`;
-    document.cookie = `auth_user=; path=/; max-age=0; domain=${domain}; SameSite=Lax`;
+    document.cookie = `auth_token=; path=/; max-age=0; domain=${domain}; SameSite=Lax; secure`;
+    document.cookie = `auth_user=; path=/; max-age=0; domain=${domain}; SameSite=Lax; secure`;
 
     // Only clear user_id cookie if not preserving it
     if (!preserveUserId) {
-      document.cookie = `user_id=; path=/; max-age=0; domain=${domain}; SameSite=Lax`;
+      document.cookie = `user_id=; path=/; max-age=0; domain=${domain}; SameSite=Lax; secure`;
     }
   }
 }
