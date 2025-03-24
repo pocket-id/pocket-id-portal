@@ -37,7 +37,7 @@
     "tailwindcss-animate": "^1.0.7",
     "typescript": "^5.5.0",
     "typescript-eslint": "^8.27.0",
-    "vite": "^6.0.0"
+    "vite": "^6.2.3"
   },
   "dependencies": {
     "mode-watcher": "^0.5.1"
