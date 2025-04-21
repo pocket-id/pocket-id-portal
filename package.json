@@ -40,7 +40,7 @@
     "vite": "^6.3.2"
   },
   "dependencies": {
-    "mode-watcher": "^0.5.1",
+    "mode-watcher": "^1.0.2",
     "runed": "^0.25.0"
   }
 }
