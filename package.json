@@ -22,7 +22,7 @@
     "@sveltejs/kit": "^2.20.7",
     "@sveltejs/vite-plugin-svelte": "^5.0.0",
     "@tailwindcss/vite": "^4.1.4",
-    "bits-ui": "^1.4.1",
+    "bits-ui": "^1.4.2",
     "clsx": "^2.1.1",
     "eslint": "^9.25.1",
     "eslint-plugin-svelte": "^3.5.1",
@@ -37,7 +37,7 @@
     "tailwindcss-animate": "^1.0.7",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.31.1",
-    "vite": "^6.3.3"
+    "vite": "^6.3.4"
   },
   "dependencies": {
     "mode-watcher": "^1.0.2",
