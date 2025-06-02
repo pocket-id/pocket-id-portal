@@ -22,7 +22,7 @@
     "@sveltejs/kit": "^2.21.1",
     "@sveltejs/vite-plugin-svelte": "^5.0.0",
     "@tailwindcss/vite": "^4.1.8",
-    "bits-ui": "^1.8.0",
+    "bits-ui": "^2.4.1",
     "clsx": "^2.1.1",
     "eslint": "^9.28.0",
     "eslint-plugin-svelte": "^3.9.1",
